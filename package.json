@@ -7,7 +7,9 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "tauri": "tauri"
+    "tauri": "tauri",
+    "dist:win-msvc": "pnpm build && cd src-tauri && cargo xwin build --release --features custom-protocol --target x86_64-pc-windows-msvc",
+    "dist:win-gnu": "pnpm build && cd src-tauri && cross build --release --features custom-protocol --target x86_64-pc-windows-gnu"
   },
   "dependencies": {
     "react": "^18.2.0",
