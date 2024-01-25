@@ -26,3 +26,35 @@ rustup target add x86_64-pc-windows-msvc
 cargo install cross@0.2.5
 cargo install cargo-xwin@0.16.3
 ```
+
+## Build
+
+### x86_64-pc-windows-msvc
+
+```sh
+pnpm dist:win-msvc
+
+# equivalent to
+# pnpm build
+# 
+# cd tauri-src
+# 
+# cargo xwin build --release \
+#     --features custom-protocol \
+#     --target x86_64-pc-windows-msvc
+```
+
+### x86_64-pc-windows-gnu
+
+```sh
+pnpm dist:win-msvc
+
+# equivalent to
+# pnpm build
+# 
+# cd tauri-src
+# 
+# cross build --release \
+#     --features custom-protocol \
+#     --target x86_64-pc-windows-gnu
+```
