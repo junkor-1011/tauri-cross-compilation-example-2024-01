@@ -10,16 +10,17 @@
     "tauri": "tauri",
     "dist": "tauri build",
     "dist:appimage": "tauri build --bundles appimage",
-    "dist:win-msvc": "tauri build --bundles none --runner cargo-xwin --target x86_64-pc-windows-msvc",
-    "dist:win-gnu": "tauri build --bundles none --runner cross --target x86_64-pc-windows-gnu"
+    "dist:win-msvc": "tauri build --no-bundle --runner cargo-xwin --target x86_64-pc-windows-msvc",
+    "dist:win-gnu": "tauri build --no-bundle --runner cross --target x86_64-pc-windows-gnu"
   },
   "dependencies": {
-    "@tauri-apps/api": "^1.6.0",
+    "@tauri-apps/api": "^2.0.1",
+    "@tauri-apps/plugin-shell": "^2.0.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },
   "devDependencies": {
-    "@tauri-apps/cli": "^1.6.2",
+    "@tauri-apps/cli": "^2.0.1",
     "@types/react": "^18.3.11",
     "@types/react-dom": "^18.3.0",
     "@vitejs/plugin-react": "^4.3.2",
