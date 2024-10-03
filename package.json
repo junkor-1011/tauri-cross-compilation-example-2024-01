@@ -8,8 +8,10 @@
     "build": "tsc && vite build",
     "preview": "vite preview",
     "tauri": "tauri",
-    "dist:win-msvc": "pnpm build && cd src-tauri && cargo xwin build --release --features custom-protocol --target x86_64-pc-windows-msvc",
-    "dist:win-gnu": "pnpm build && cd src-tauri && cross build --release --features custom-protocol --target x86_64-pc-windows-gnu"
+    "dist": "tauri build",
+    "dist:appimage": "tauri build --bundles appimage",
+    "dist:win-msvc": "tauri build --bundles none --runner cargo-xwin --target x86_64-pc-windows-msvc",
+    "dist:win-gnu": "tauri build --bundles none --runner cross --target x86_64-pc-windows-gnu"
   },
   "dependencies": {
     "@tauri-apps/api": "^1.6.0",
